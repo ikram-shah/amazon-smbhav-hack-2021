@@ -1,31 +1,22 @@
 <template>
   <div class="container mx-auto">
     <div class="my-8">
-      <h3 class="text-gray-500 mb-1">Offers near you</h3>
+      <h4 class="font-black text-black py-4">Offers near you</h4>
       <vue-glide :perView="1" :bullet="true" class="mb-6">
         <vue-glide-slide>
           <router-link to="/about">
-            <img src="@/assets/slide1.jpg" alt="mandalorian" class="rounded" />
+          <co
+            <img src="https://cdn.grabon.in/gograbon/images/merchant/1610000375685.png" alt="mandalorian" class="rounded" />
           </router-link>
         </vue-glide-slide>
         <vue-glide-slide>
           <router-link to="/about">
-            <img src="@/assets/slide2.jpg" alt="mandalorian" class="rounded" />
+            <img src="https://images.freekaamaal.com/post_images/1606887324.jpg" alt="mandalorian" class="rounded" />
           </router-link>
         </vue-glide-slide>
         <vue-glide-slide>
           <router-link to="/about">
-            <img src="@/assets/slide3.jpg" alt="mandalorian" class="rounded" />
-          </router-link>
-        </vue-glide-slide>
-        <vue-glide-slide>
-          <router-link to="/about">
-            <img src="@/assets/slide1.jpg" alt="mandalorian" class="rounded" />
-          </router-link>
-        </vue-glide-slide>
-        <vue-glide-slide>
-          <router-link to="/about">
-            <img src="@/assets/slide2.jpg" alt="mandalorian" class="rounded" />
+            <img src="https://d168jcr2cillca.cloudfront.net/uploadimages/coupons/10211-Swiggy_Banrner.jpg" alt="mandalorian" class="rounded" />
           </router-link>
         </vue-glide-slide>
         <template slot="control">
@@ -64,21 +55,21 @@
         </template>
       </vue-glide>
 
-      <h3 class="text-gray-500 mb-1">Best rated</h3>
+      <h4 class="font-black text-black py-4">Prime exclusives</h4>
       <div class="recommended px-1 mb-12">
         <vue-glide
-          :perView="5"
-          :gap="20"
-          :peek="{ before: 0, after: 70 }"
+          :perView="2"
+          :gap="30"
+          :peek="{ before: 0, after: 0 }"
           :breakpoints="{
             1024: {
-              perView: 9,
+              perView: 2,
             },
             800: {
-              perView: 6,
+              perView: 1,
             },
             576: {
-              perView: 4,
+              perView: 1,
               peek: {
                 before: 0,
                 after: 0,
@@ -86,36 +77,17 @@
             },
           }"
         >
-          <vue-glide-slide>
-            <router-link to="/about"
-              ><img src="@/assets/star_wars_a_new_hope.jpg" alt="star wars"
-            /></router-link>
+
+          <vue-glide-slide v-for="offer in getPrimeExclusives()" :key="offer.name">
+            <prime-exclusive-card 
+              :img="offer.image"
+              :storeName="offer.storeName"
+              :productName="offer.productName"
+              :productPrice="offer.productPrice"
+              :offerDesc="offer.offerDesc"
+              :storeNearby="offer.storeNearby"/>
           </vue-glide-slide>
-          <vue-glide-slide>
-            <router-link to="/about"
-              ><img src="@/assets/snow_white.jpg" alt="snow white"
-            /></router-link>
-          </vue-glide-slide>
-          <vue-glide-slide>
-            <router-link to="/about"
-              ><img src="@/assets/black_panther.jpg" alt="black panther"
-            /></router-link>
-          </vue-glide-slide>
-          <vue-glide-slide>
-            <router-link to="/about"
-              ><img src="@/assets/zootopia.jpg" alt="zootopia"
-            /></router-link>
-          </vue-glide-slide>
-          <vue-glide-slide>
-            <router-link to="/about"
-              ><img src="@/assets/one_strange_rock.jpg" alt="one strange rock"
-            /></router-link>
-          </vue-glide-slide>
-          <vue-glide-slide>
-            <router-link to="/about"
-              ><img src="@/assets/one_strange_rock.jpg" alt="one strange rock"
-            /></router-link>
-          </vue-glide-slide>
+          
           <template slot="control">
             <button
               data-glide-dir="<"
@@ -151,14 +123,47 @@
             </button>
           </template>
         </vue-glide>
+        <h4 class="font-black text-black py-4">What do you want to shop for today?</h4>
+        <div class=" flex flex-wrap items-center justify-center">
+          <div v-for="category in getCategories()" :key="category.name">
+            <category-card
+              :bgColor="category.bgColor"
+              :img="category.image"
+              :name="category.name"
+            />
+          </div>
+        </div>
       </div>
-      <!-- end recommended -->
     </div>
   </div>
 </template>
 
 <script>
+import CategoryCard from "../components/Cards/CategoryCard.vue";
+import PrimeExclusiveCard from '../components/Cards/PrimeExclusiveCard.vue';
+
+import * as data from "../data.js";
+
 export default {
   name: "home",
+  components: {
+    CategoryCard,
+    PrimeExclusiveCard,
+  },
+  methods: {
+    getCategories() {
+      return data.getCategories();
+    },
+    getPrimeExclusives() {
+      return data.getPrimeExclusives();
+    },
+  },
 };
 </script>
+
+<style scoped>
+img{
+  max-height: 30vh;
+  min-width: 90vw;
+}
+</style>

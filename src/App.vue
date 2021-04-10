@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-gray-900 text-white min-h-screen">
+  <div id="app" class="bg-white text-white min-h-screen">
     <navigation />
 
     <div class="w-full">
