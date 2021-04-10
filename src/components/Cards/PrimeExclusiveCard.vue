@@ -66,7 +66,7 @@ export default {
   box-shadow: 0px 0px 2px #e5e5e5;
   border: 2px solid #f5f6f9;
   border-radius: 8px;
-  width: 40vw;
+  /* width: 40vw; */
 }
 .column {
   float: left;
