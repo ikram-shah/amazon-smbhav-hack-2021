@@ -42,7 +42,6 @@ functions:
             origin: '*'
             headers:
               - sessionId
-              - language
               - Content-Type
               - X-Amz-Date
               - Authorization
@@ -55,10 +54,31 @@ functions:
           cors:
             origin: '*'
             headers:
-              - consentArtefactId
-              - fiu
-              - language
               - sessionId
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+      - http:
+          path: products
+          method: get
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+      - http:
+          path: stores
+          method: get
+          cors:
+            origin: '*'
+            headers:
               - Content-Type
               - X-Amz-Date
               - Authorization
