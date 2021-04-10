@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-white sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
+    class="bg-gray-800 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
   >
     <div class="flex items-center justify-between px-4 py-3 sm:p-0">
       <div>
@@ -32,7 +32,7 @@
       class="px-2 pt-2 pb-4 sm:flex sm:p-0"
     >
       <a
-        href="#"
+        href="/"
         class="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800"
         >Home</a
       >

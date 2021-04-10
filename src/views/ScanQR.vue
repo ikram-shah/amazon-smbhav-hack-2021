@@ -1,18 +1,20 @@
 <template>
   <div>
-    <p class="decode-result">
-      Last result: <b>{{ result }}</b>
+    <h3 class="text-xl mx-8 font-bold text-gray-800 my-4">Scan QR</h3>
+    <div class="mx-8 my-4">
+      <qrcode-stream :camera="camera" @decode="onDecode" @init="onInit">
+        <div v-show="showScanConfirmation" class="scan-confirmation">
+          <img
+            class="mx-24 my-24"
+            src="../assets/checkmark.png"
+            alt="Checkmark"
+          />
+        </div>
+      </qrcode-stream>
+    </div>
+    <p v-if="result" class="mx-8 text-gray-800 decode-result">
+      <b>{{ result }}</b>
     </p>
-
-    <qrcode-stream :camera="camera" @decode="onDecode" @init="onInit">
-      <div v-show="showScanConfirmation" class="scan-confirmation">
-        <img
-          class="mx-24 my-24"
-          src="../assets/checkmark.png"
-          alt="Checkmark"
-        />
-      </div>
-    </qrcode-stream>
   </div>
 </template>
 
