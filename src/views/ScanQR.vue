@@ -49,6 +49,7 @@ export default {
       this.pause();
       await this.timeout(500);
       this.unpause();
+      window.location.href = content;
     },
 
     unpause() {

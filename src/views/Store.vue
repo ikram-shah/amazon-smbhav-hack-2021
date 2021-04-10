@@ -1,10 +1,9 @@
 <template>
   <div class="container mx-auto">
-    <!-- <h1 class="text-black">Store Page {{ $route.params.id }}</h1> -->
-    <div class="rounded rounded-t-lg overflow-hidden max-w-md">
+    <div v-if="storeInfo" class="rounded rounded-t-lg overflow-hidden max-w-md">
       <div class="text-left pt-2">
-        <h3 class="text-black text-lg bold font-sans">STORE NAME</h3>
-        <p class="text-black text-sm bold font-sans">STORE ADDRESS</p>
+        <h3 class="text-black text-lg bold font-sans">{{ storeInfo.name }}</h3>
+        <p class="text-black text-sm bold font-sans">{{ storeInfo.address }}</p>
         <div class="flex flex-col items-left py-1 space-y-3">
           <div class="flex space-x-3">
             <svg
@@ -134,18 +133,6 @@
                 </button>
               </template>
             </vue-glide>
-            <h4 class="text-xl font-bold text-gray-800 my-2">
-              Shop by category
-            </h4>
-            <div class="flex flex-wrap items-center justify-center">
-              <div v-for="category in getCategories()" :key="category.name">
-                <category-card
-                  :bgColor="category.bgColor"
-                  :img="category.image"
-                  :name="category.name"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -154,6 +141,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 import CategoryCard from "../components/Cards/CategoryCard.vue";
 import PrimeExclusiveCard from "../components/Cards/PrimeExclusiveCard.vue";
 
@@ -162,7 +151,20 @@ import * as data from "../data.js";
 export default {
   name: "store",
   components: {
+    CategoryCard,
     PrimeExclusiveCard,
+  },
+  data() {
+    return {
+      storeInfo: null,
+    };
+  },
+  mounted() {
+    axios
+      .get(
+        `https://wmmagt22ye.execute-api.ap-south-1.amazonaws.com/dev/store?id=${this.$route.params.id}`
+      )
+      .then((response) => console.log((this.storeInfo = response.data)));
   },
   methods: {
     getCategories() {
