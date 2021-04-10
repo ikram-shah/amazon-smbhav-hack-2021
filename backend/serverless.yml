@@ -1,0 +1,87 @@
+# serverless.yml
+
+service: smbhv-backend
+
+package:
+  exclude:
+    - node_modules/**
+    - '!node_modules/node-fetch/**'
+    - package.json
+    - package-lock.json
+    - flask-app/**
+    - serverless.yaml
+    - venv/**
+
+plugins:
+  - serverless-python-requirements
+  - serverless-wsgi
+
+custom:
+  wsgi:
+    app: app.app
+    packRequirements: false
+  pythonRequirements:
+    dockerizePip: non-linux
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: ap-south-1
+  memorySize: 512
+  timeout: 28
+
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http:
+          path: store
+          method: get
+          cors:
+            origin: '*'
+            headers:
+              - sessionId
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+      - http:
+          path: product
+          method: get
+          cors:
+            origin: '*'
+            headers:
+              - sessionId
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+      - http:
+          path: products
+          method: get
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+      - http:
+          path: stores
+          method: get
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
