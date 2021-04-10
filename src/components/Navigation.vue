@@ -37,9 +37,9 @@
         >Home</a
       >
       <a
-        href="#"
+        href="/scanQR"
         class="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
-        >Account</a
+        >Scan QR</a
       >
       <a
         href="#"
