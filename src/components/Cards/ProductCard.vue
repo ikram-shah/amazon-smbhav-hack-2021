@@ -21,7 +21,7 @@
               <h4 class="text-gray-600 font-bold text-sm">{{ desc }}</h4>
 
               <div class="text-lg font-semibold text-gray-900">
-                {{ price }}
+                ₹{{ price }}
               </div>
               <div
                 class="w-full flex-none text-sm font-medium text-gray-500 mt-2"
