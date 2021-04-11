@@ -4,28 +4,28 @@
       <h4 class="text-xl font-bold text-gray-800">Offers near you</h4>
       <vue-glide :perView="1" :bullet="true" class="mb-6">
         <vue-glide-slide>
-          <router-link to="/about">
+          <router-link to="/">
             <co
               <img
-              src="https://cdn.grabon.in/gograbon/images/merchant/1610000375685.png"
+              src="../assets/banner_1.png"
               alt="mandalorian"
               class="rounded"
             />
           </router-link>
         </vue-glide-slide>
         <vue-glide-slide>
-          <router-link to="/about">
+          <router-link to="/">
             <img
-              src="https://images.freekaamaal.com/post_images/1606887324.jpg"
+              src="../assets/banner_2.png"
               alt="mandalorian"
               class="rounded"
             />
           </router-link>
         </vue-glide-slide>
         <vue-glide-slide>
-          <router-link to="/about">
+          <router-link to="/">
             <img
-              src="https://d168jcr2cillca.cloudfront.net/uploadimages/coupons/10211-Swiggy_Banrner.jpg"
+              src="../assets/banner_3.png"
               alt="mandalorian"
               class="rounded"
             />
