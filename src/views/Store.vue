@@ -61,9 +61,9 @@
       </div>
       <hr class="line" />
       <div>
-        <div class="mb-2">
+        <div>
           <h4 class="text-lg font-bold text-gray-800">Prime exclusives</h4>
-          <div class="recommended px-1 mb-12">
+          <div class="recommended px-1">
             <vue-glide
               :perView="2"
               :gap="30"
@@ -136,6 +136,21 @@
           </div>
         </div>
       </div>
+      <div>
+        <div class="mb-2">
+          <h4 class="text-lg font-bold text-gray-800">Catalog</h4>
+          <div class="recommended px-1 mb-12">
+            <div v-for="(val, index) in productsInfo" :key="index">
+              <ProductCard
+                :name="val.name"
+                :desc="val.desc"
+                :rating="val.rating"
+                :price="val.price"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -143,28 +158,37 @@
 <script>
 import axios from "axios";
 
-import CategoryCard from "../components/Cards/CategoryCard.vue";
 import PrimeExclusiveCard from "../components/Cards/PrimeExclusiveCard.vue";
+import ProductCard from "../components/Cards/ProductCard.vue";
 
 import * as data from "../data.js";
 
 export default {
   name: "store",
   components: {
-    CategoryCard,
     PrimeExclusiveCard,
+    ProductCard,
   },
   data() {
     return {
       storeInfo: null,
+      productsInfo: null,
     };
   },
   mounted() {
+    //get store details
     axios
       .get(
         `https://wmmagt22ye.execute-api.ap-south-1.amazonaws.com/dev/store?id=${this.$route.params.id}`
       )
       .then((response) => console.log((this.storeInfo = response.data)));
+
+    //get the products in the store
+    axios
+      .get(
+        `https://wmmagt22ye.execute-api.ap-south-1.amazonaws.com/dev/products?storeId=${this.$route.params.id}`
+      )
+      .then((response) => console.log((this.productsInfo = response.data)));
   },
   methods: {
     getCategories() {

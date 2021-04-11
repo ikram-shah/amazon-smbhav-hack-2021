@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ScanQR from './views/ScanQR.vue'
 import Store from './views/Store.vue'
+import Stores from './views/Stores.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/store/:id',
       name: 'store',
       component: Store
+    },
+    {
+      path: '/stores',
+      name: 'stores',
+      component: Stores
     },
     {
       path: '/about',

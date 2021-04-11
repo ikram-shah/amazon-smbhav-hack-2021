@@ -4,7 +4,9 @@
   >
     <div class="flex items-center justify-between px-4 py-3">
       <div class="px-2">
-        <img class="h-8" src="../assets/logo.png" alt="Logo" />
+        <a href="/">
+          <img class="h-8" src="../assets/logo.png" alt="Logo" />
+        </a>
       </div>
       <div class="box w-56">
         <div class="box-wrapper">
@@ -70,9 +72,9 @@
         >Home</a
       >
       <a
-        href="/store/{id}"
+        href="/stores"
         class="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800"
-        >Store</a
+        >Stores</a
       >
       <a
         href="/scanQR"
