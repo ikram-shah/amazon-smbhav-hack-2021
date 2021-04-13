@@ -2,7 +2,7 @@
   <div class="item">
     <div class="row">
       <div class="column">
-        <div class="relative pt-10 px-10 flex items-center justify-center">
+        <div class="relative pt-10 flex items-center justify-center">
           <div
             class="block absolute w-50 h-50 bottom-0 left-0 -mb-24 ml-3"
             style="

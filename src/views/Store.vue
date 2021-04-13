@@ -146,6 +146,7 @@
                 :desc="val.desc"
                 :rating="val.rating"
                 :price="val.price"
+                :imageURL="val.imageURL"
               />
             </div>
           </div>

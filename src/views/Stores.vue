@@ -1,7 +1,13 @@
 <template>
   <div>
     <div v-for="(val, index) in storesInfo" :key="index">
-      <StoreCard :id="val.id" :name="val.name" :address="val.address" :rating="val.rating" />
+      <StoreCard
+        :selfCheckout="val.isSelfCheckout"
+        :id="val.id"
+        :name="val.name"
+        :address="val.address"
+        :rating="val.rating"
+      />
     </div>
   </div>
 </template>

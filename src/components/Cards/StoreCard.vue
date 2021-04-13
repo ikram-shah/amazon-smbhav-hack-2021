@@ -6,11 +6,12 @@
       <div class="w-3/2 bg-gray-200 overflow-hidden">
         <div class="flex">
           <div class="flex-none w-24 relative">
-            <!-- <img
-              src="http://lorempixel.com/500/500/sports/1/Dummy-Text/"
+            <img
+              v-if="selfCheckout == 'true'"
+              src="../../assets/selfcheckout.png"
               alt=""
-              class="absolute inset-0 w-full h-full object-cover"
-            /> -->
+              class="absolute p-1 inset-0 w-8 h-8 object-cover"
+            />
           </div>
           <form class="p-3">
             <div @click="redirectToStorePage" class="w-48 rounded-lg">
@@ -40,6 +41,7 @@ export default {
     name: null,
     address: null,
     rating: null,
+    selfCheckout: null,
   },
   methods: {
     redirectToStorePage() {

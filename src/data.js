@@ -43,45 +43,45 @@ const categories = [
 
 const primeExclusives = [
     {
-        storeName: "Pinnacle stores",
-        productName: "Lizol",
-        productPrice: "Rs.100",
-        offerDesc: "Slash",
-        image: "https://rukminim1.flixcart.com/image/416/416/k7z3afk0/bathroom-floor-cleaner/z/9/d/lavender-500-disinfectant-surface-cleaner-bottle-lizol-original-imafq39xudncaux5.jpeg?q=70",
+        storeName: "Ascent Store",
+        productName: "Colgate",
+        productPrice: "Rs.90",
+        offerDesc: "MRP - Rs.120",
+        image: "https://images-na.ssl-images-amazon.com/images/I/61nctAojOEL._SL1000_.jpg",
         storeNearby: "2 mins",
     },
     {
-        storeName: "Some other stores",
-        productName: "Pink Lizol",
-        productPrice: "Rs.900",
-        offerDesc: "Slash",
-        image: "https://pngimg.com/uploads/toothpaste/toothpaste_PNG18323.png",
+        storeName: "Ascent Store",
+        productName: "Lizol",
+        productPrice: "Rs.100",
+        offerDesc: "MRP - Rs.130",
+        image: "https://images-na.ssl-images-amazon.com/images/I/51iatO8hXjL._SX466_.jpg",
         storeNearby: "2 mins",
     },
     {
-        storeName: "Purple stores",
-        productName: "Lizol",
-        productPrice: "Rs.100",
-        offerDesc: "Slash",
-        image: "https://purepng.com/public/uploads/large/purepng.com-black-t-shirtclothingblack-t-shirtfashion-dress-shirt-black-cloth-tshirt-631522326884bzr0p.png",
+        storeName: "Ascent Store",
+        productName: "Speed Cube",
+        productPrice: "Rs.110",
+        offerDesc: "MRP - Rs.125",
+        image: "https://classteaching.files.wordpress.com/2019/09/rubiks-cube.jpg",
         storeNearby: "2 mins",
     },
     {
-        storeName: "Pink stores",
-        productName: "Lizol",
-        productPrice: "Rs.100",
-        offerDesc: "Slash",
-        image: "https://www.transparentpng.com/thumb/apple-iphone/fORwQR-smartphone-apple-iphone-x-transparent-background.png",
+        storeName: "Ascent Store",
+        productName: "Dove Soap",
+        productPrice: "Rs.130",
+        offerDesc: "MRP - Rs.150",
+        image: "https://5.imimg.com/data5/JF/XH/FZ/SELLER-90374695/256390-xlarge-2-500x500.jpg",
         storeNearby: "2 mins",
     }
 ];
 
 
-function getCategories(){
+function getCategories() {
     return categories;
 }
 
-function getPrimeExclusives(){
+function getPrimeExclusives() {
     return primeExclusives;
 }
 

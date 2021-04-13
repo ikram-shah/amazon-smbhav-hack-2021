@@ -7,7 +7,7 @@
         <div class="flex">
           <div class="flex-none w-24 relative">
             <img
-              src="http://lorempixel.com/500/500/sports/1/Dummy-Text/"
+              :src="imageURL"
               alt=""
               class="absolute inset-0 w-full h-full object-cover"
             />
@@ -43,6 +43,7 @@ export default {
     desc: null,
     rating: null,
     price: null,
+    imageURL: null,
   },
 };
 </script>
